@@ -22,34 +22,34 @@ export default function Hero() {
       tl.to(cannonballRef.current, {
         x: '0',
         y: '0',
-        duration: 1.5,
+        duration: 0.4,
         ease: 'power4.in',
       })
       // 2. Hits center, cannonball disappears
-      .to(cannonballRef.current, { opacity: 0, duration: 0.4 })
+      .to(cannonballRef.current, { opacity: 0, duration: 0.1 })
       // 3. Green explosion pulses out
       .to(explosionRef.current, {
         scale: 20,
         opacity: 0.8,
-        duration: 1.8,
+        duration: 0.5,
         ease: 'power3.out'
-      }, '-=0.4')
+      }, '-=0.1')
       // Fade out the explosion ripple
-      .to(explosionRef.current, { opacity: 0, duration: 1.2 })
+      .to(explosionRef.current, { opacity: 0, duration: 0.3 })
       // 4. Logo scales up simultaneously with the explosion fading
       .to(logoWrapperRef.current, {
         scale: 1,
         opacity: 1,
-        duration: 2.5,
+        duration: 0.8,
         ease: 'back.out(1.7)'
-      }, '-=1.5')
+      }, '-=0.4')
       // 5. Fade in supporting text
       .to(textRef.current, {
         y: 0,
         opacity: 1,
-        duration: 1.8,
+        duration: 0.6,
         ease: 'power2.out'
-      }, '-=1.5');
+      }, '-=0.5');
     }, containerRef);
 
     return () => ctx.revert();
@@ -66,9 +66,8 @@ export default function Hero() {
         backgroundBlendMode: 'luminosity'
       }}
     >
-      {/* Green-to-transparent overlay to style the desaturated image */}
-      <div className="absolute inset-0 bg-gradient-to-b from-kelly-green/40 to-charcoal/95 pointer-events-none mix-blend-multiply"></div>
-      <div className="absolute inset-0 bg-charcoal/70 pointer-events-none"></div>
+      {/* Dark overlay to style the desaturated image */}
+      <div className="absolute inset-0 bg-charcoal/80 pointer-events-none"></div>
 
       {/* Animation Elements */}
       <div 
