@@ -22,7 +22,7 @@ export default function Hero() {
       tl.to(cannonballRef.current, {
         x: '0',
         y: '0',
-        duration: 2.5,
+        duration: 1.5,
         ease: 'power4.in',
       })
       // 2. Hits center, cannonball disappears
