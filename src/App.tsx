@@ -2,28 +2,34 @@ import GameDayStatus from './components/GameDayStatus';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Specialties from './components/Specialties';
+import WeeklyMenu from './components/WeeklyMenu';
 import LocationContact from './components/LocationContact';
 
 function App() {
   return (
-    <div className="min-h-screen bg-charcoal text-white font-body">
+    <div className="min-h-screen bg-deep-bg text-white font-body">
       <GameDayStatus />
       <Navbar />
       <main>
         <Hero />
         <Specialties />
+        <WeeklyMenu />
         <LocationContact />
       </main>
-      
-      {/* Footer */}
+
       <footer className="bg-matte-black py-8 border-t border-white/5 text-center px-4">
-        <div className="max-w-7xl mx-auto">
-          <p className="font-heading uppercase tracking-widest text-gray-500 text-sm">
-            &copy; {new Date().getFullYear()} Cannonballs Sports Bar. All Rights Reserved.
+        <div className="max-w-7xl mx-auto flex flex-col items-center gap-4">
+          <div className="flex items-center gap-3">
+            <img src="/small_logo.jpg" alt="Cannonballs" className="w-9 h-9 rounded-full object-cover border border-brand-green/40" />
+            <span className="font-script text-cream text-xl">Cannonballs</span>
+            <span className="font-heading text-brand-green text-xs uppercase tracking-widest">Sports Bar</span>
+          </div>
+          <p className="font-heading uppercase tracking-widest text-white/30 text-xs">
+            &copy; {new Date().getFullYear()} Cannonballs Sports Bar · 727 Wisconsin Ave, North Fond du Lac, WI
           </p>
-          <div className="mt-4 flex justify-center space-x-4">
-            <a href="#" className="text-gray-500 hover:text-kelly-green transition-colors">Facebook</a>
-            <a href="#" className="text-gray-500 hover:text-kelly-green transition-colors">Instagram</a>
+          <div className="flex gap-6">
+            <a href="#" className="text-white/40 hover:text-cream transition-colors text-sm font-heading uppercase tracking-wider">Facebook</a>
+            <a href="tel:+19209079027" className="text-white/40 hover:text-cream transition-colors text-sm font-heading uppercase tracking-wider">Call Us</a>
           </div>
         </div>
       </footer>

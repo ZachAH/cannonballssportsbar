@@ -1,81 +1,90 @@
-import { MapPin, Phone, Clock } from 'lucide-react';
+import { MapPin, Phone, Clock, Share2 } from 'lucide-react';
 
 export default function LocationContact() {
   return (
-    <section id="location" className="py-24 bg-charcoal text-white relative border-t border-white/5">
+    <section id="location" className="py-24 bg-field-green text-white border-t border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          
-          {/* Details */}
-          <div>
-            <h2 className="font-heading text-4xl md:text-5xl font-bold uppercase tracking-tight mb-8 text-glow text-kelly-green">
-              Join the Action
-            </h2>
-            <p className="text-gray-300 text-lg mb-10 max-w-lg leading-relaxed">
-              Whether you're celebrating a win or shaking off a loss, Cannonballs is your home for sports in North Fond du Lac.
-            </p>
+        <div className="text-center mb-16">
+          <p className="font-heading uppercase tracking-[0.3em] text-brand-green text-sm font-semibold mb-3">
+            North Fond du Lac, WI
+          </p>
+          <h2 className="font-heading text-4xl md:text-5xl font-bold uppercase tracking-tight">
+            Come <span className="text-cream">Find Us</span>
+          </h2>
+        </div>
 
-            <div className="space-y-8">
-              <div className="flex items-start">
-                <div className="bg-matte-black p-3 rounded-full border-glow text-kelly-green mr-6">
-                  <MapPin size={24} />
-                </div>
-                <div>
-                  <h3 className="font-heading uppercase text-xl font-semibold mb-1">Location</h3>
-                  <p className="text-gray-400">727 Wisconsin Ave</p>
-                  <p className="text-gray-400">North Fond du Lac, WI 54937</p>
-                </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
+
+          {/* Info */}
+          <div className="space-y-8">
+            <div className="flex items-start gap-5">
+              <div className="bg-brand-green/15 p-3 rounded-full border border-brand-green/30 text-brand-green flex-shrink-0">
+                <MapPin size={22} />
               </div>
-
-              <div className="flex items-start">
-                <div className="bg-matte-black p-3 rounded-full border-glow text-kelly-green mr-6">
-                  <Phone size={24} />
-                </div>
-                <div>
-                  <h3 className="font-heading uppercase text-xl font-semibold mb-1">Give Us a Ring</h3>
-                  <a href="tel:+19209079027" className="text-white hover:text-kelly-green transition-colors text-lg">
-                    +1 920-907-9027
-                  </a>
-                </div>
+              <div>
+                <h3 className="font-heading uppercase font-semibold text-lg mb-1 text-cream">Location</h3>
+                <p className="text-white/65">727 Wisconsin Ave</p>
+                <p className="text-white/65">North Fond du Lac, WI 54937</p>
               </div>
+            </div>
 
-              <div className="flex items-start">
-                <div className="bg-matte-black p-3 rounded-full border-glow text-kelly-green mr-6">
-                  <Clock size={24} />
-                </div>
-                <div>
-                  <h3 className="font-heading uppercase text-xl font-semibold mb-1">Hours</h3>
-                  <p className="text-gray-400 mb-1"><span className="text-white w-24 inline-block">Mon - Thu:</span> 11:00 AM - 12:00 AM</p>
-                  <p className="text-gray-400 mb-1"><span className="text-white w-24 inline-block">Friday:</span> 11:00 AM - 2:00 AM</p>
-                  <p className="text-gray-400 mb-1"><span className="text-white w-24 inline-block">Saturday:</span> 10:00 AM - 2:00 AM</p>
-                  <p className="text-gray-400"><span className="text-white w-24 inline-block">Sunday:</span> 10:00 AM - 12:00 AM</p>
-                </div>
+            <div className="flex items-start gap-5">
+              <div className="bg-brand-green/15 p-3 rounded-full border border-brand-green/30 text-brand-green flex-shrink-0">
+                <Phone size={22} />
+              </div>
+              <div>
+                <h3 className="font-heading uppercase font-semibold text-lg mb-1 text-cream">Give Us a Ring</h3>
+                <a href="tel:+19209079027" className="text-white hover:text-brand-green transition-colors text-lg font-medium">
+                  (920) 907-9027
+                </a>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-5">
+              <div className="bg-brand-green/15 p-3 rounded-full border border-brand-green/30 text-brand-green flex-shrink-0">
+                <Clock size={22} />
+              </div>
+              <div>
+                <h3 className="font-heading uppercase font-semibold text-lg mb-2 text-cream">Hours</h3>
+                <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 text-sm">
+                  {[
+                    ['Mon – Thu', '11am – Midnight'],
+                    ['Friday',    '11am – 2am'],
+                    ['Saturday',  '10am – 2am'],
+                    ['Sunday',    '10am – Midnight'],
+                  ].map(([day, hrs]) => (
+                    <>
+                      <dt key={day + '-dt'} className="text-white font-medium">{day}</dt>
+                      <dd key={day + '-dd'} className="text-white/60">{hrs}</dd>
+                    </>
+                  ))}
+                </dl>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-5">
+              <div className="bg-brand-green/15 p-3 rounded-full border border-brand-green/30 text-brand-green flex-shrink-0">
+                <Share2 size={22} />
+              </div>
+              <div>
+                <h3 className="font-heading uppercase font-semibold text-lg mb-1 text-cream">Follow Us</h3>
+                <a href="#" className="text-white/65 hover:text-brand-green transition-colors">
+                  Cannonballs Sports Bar on Facebook
+                </a>
               </div>
             </div>
           </div>
 
-          {/* Map Alternative / Graphic */}
-          <div className="relative h-96 w-full rounded-md border border-white/10 overflow-hidden group">
-            <div className="absolute inset-0 bg-kelly-green/10 group-hover:bg-transparent transition-all z-10 pointer-events-none mix-blend-overlay"></div>
-            {/* Generic map placeholder styling */}
-            <div 
-              className="absolute inset-0 bg-matte-black flex items-center justify-center filter grayscale group-hover:grayscale-0 transition-all duration-500"
-              style={{
-                backgroundImage: `url('https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80')`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                opacity: 0.6
-              }}
-            >
-              <div className="relative z-20 flex flex-col items-center">
-                 <div className="bg-kelly-green text-charcoal p-4 rounded-full shadow-neon-green mb-4 animate-bounce">
-                    <MapPin size={32} fill="currentColor" />
-                 </div>
-                 <div className="bg-charcoal px-6 py-2 rounded shadow-lg border border-kelly-green/30">
-                    <p className="font-heading uppercase font-bold text-lg tracking-wider">Cannonballs</p>
-                 </div>
-              </div>
-            </div>
+          {/* Map embed placeholder */}
+          <div className="relative w-full rounded-md overflow-hidden border border-brand-green/20 shadow-glow-green aspect-[4/3]">
+            <iframe
+              title="Cannonballs Sports Bar location"
+              src="https://www.google.com/maps?q=727+Wisconsin+Ave,+North+Fond+du+Lac,+WI+54937&output=embed"
+              className="absolute inset-0 w-full h-full grayscale contrast-125 opacity-80"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+            <div className="absolute inset-0 bg-brand-green/8 pointer-events-none mix-blend-multiply" />
           </div>
 
         </div>
